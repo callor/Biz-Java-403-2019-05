@@ -4,19 +4,19 @@ public class HelloVar_06 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		// ½Ç¼öÇü(¼Ò¼öÁ¡ÀÌÇÏ 6ÀÚ¸®±îÁö)
-		// floatÀ¸·Î ¼±¾ğµÈ º¯¼ö¿¡ ¼ıÀÚ°ªÀ» ´ëÀÔÇÒ¶§´Â
-		// ³¡¿¡ ¿µ ¼Ò¹®ÀÚ f¸¦ ºÙ¿©ÁØ´Ù.
+		// ì‹¤ìˆ˜í˜•(ì†Œìˆ˜ì ì´í•˜ 6ìë¦¬ê¹Œì§€)
+		// floatìœ¼ë¡œ ì„ ì–¸ëœ ë³€ìˆ˜ì— ìˆ«ìê°’ì„ ëŒ€ì…í• ë•ŒëŠ”
+		// ëì— ì˜ ì†Œë¬¸ì fë¥¼ ë¶™ì—¬ì¤€ë‹¤.
 		float korScore = 90.0f;
 		float engScore = 80f;
 		float mathScore = 70f;
 		
 		engScore = 88;
 		float sum = korScore + engScore + mathScore;
-		System.out.println("ÃÑÁ¡:" + sum);
+		System.out.println("ì´ì :" + sum);
 		
 		float avg = sum / 3;
-		System.out.println("Æò±Õ:" + avg);
+		System.out.println("í‰ê· :" + avg);
 
 	}
 

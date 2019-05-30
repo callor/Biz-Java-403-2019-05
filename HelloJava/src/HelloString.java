@@ -4,27 +4,27 @@ public class HelloString {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		// ""(Å«µû¿ÈÇ¥, DQM)·Î ¹­¿©ÀÖ´Â ¸ðµç °ÍµéÀº
-		// ¹®ÀÚ¿­ÀÌ¶ó°í ºÎ¸¥´Ù.
-		// ÄÚµù¿ë¾î¿¡¼­´Â String literalÀÌ¶ó°í ÇÑ´Ù.
-		// ¹®ÀÚ¿­Àº º¸ÀÌ´Â ±×´ë·Î°¡ °ª(½ÄÀÌ ¾Æ´Ï´Ù)ÀÌ´Ù.
+		// ""(í°ë”°ì˜´í‘œ, DQM)ë¡œ ë¬¶ì—¬ìžˆëŠ” ëª¨ë“  ê²ƒë“¤ì€
+		// ë¬¸ìžì—´ì´ë¼ê³  ë¶€ë¥¸ë‹¤.
+		// ì½”ë”©ìš©ì–´ì—ì„œëŠ” String literalì´ë¼ê³  í•œë‹¤.
+		// ë¬¸ìžì—´ì€ ë³´ì´ëŠ” ê·¸ëŒ€ë¡œê°€ ê°’(ì‹ì´ ì•„ë‹ˆë‹¤)ì´ë‹¤.
 		
-		// 30 + 40 Àº ¼ýÀÚ 30°ú 40À» µ¡¼ÀÇÏ¶ó´Â ½ÄÀÌ´Ù.
-		// "30+40" Àº ¹®ÀÚ¿­ 30+40 ÀÎ °ªÀÌ´Ù.
+		// 30 + 40 ì€ ìˆ«ìž 30ê³¼ 40ì„ ë§ì…ˆí•˜ë¼ëŠ” ì‹ì´ë‹¤.
+		// "30+40" ì€ ë¬¸ìžì—´ 30+40 ì¸ ê°’ì´ë‹¤.
 		
-		// ¾Æ·¡ ¸í·É¹®Àº 30+40ÀÇ ¿¬»ê(°è»ê)°á°úÀÎ 70À» ÄÜ¼Ö¿¡ Ç¥Çö
+		// ì•„ëž˜ ëª…ë ¹ë¬¸ì€ 30+40ì˜ ì—°ì‚°(ê³„ì‚°)ê²°ê³¼ì¸ 70ì„ ì½˜ì†”ì— í‘œí˜„
 		System.out.println(30+40);
 		
-		// ¾Æ·¡ ¸í·É¹®Àº 30+40 ÀÌ¶ó´Â ¹®ÀÚ¿­À» ÄÜ¼Ö¿¡ Ç¥Çö
+		// ì•„ëž˜ ëª…ë ¹ë¬¸ì€ 30+40 ì´ë¼ëŠ” ë¬¸ìžì—´ì„ ì½˜ì†”ì— í‘œí˜„
 		System.out.println("30+40");
 		
-		System.out.println("´ëÇÑ¹Î±¹¸¸¼¼");
+		System.out.println("ëŒ€í•œë¯¼êµ­ë§Œì„¸");
 		
-		// ¹®ÀÚ¿­³¢¸®´Â À¯ÀÏÇÏ°Ô µ¡¼À ¿¬»êÀ» ¼öÇàÇÒ¼ö ÀÖ´Âµ¥
-		// ¹®ÀÚ¿­µéÀ» ¿¬°áÇÏ¶ó´Â °ÍÀÌ´Ù.
-		System.out.println("´ëÇÑ¹Î±¹" + "¸¸¼¼");
+		// ë¬¸ìžì—´ë¼ë¦¬ëŠ” ìœ ì¼í•˜ê²Œ ë§ì…ˆ ì—°ì‚°ì„ ìˆ˜í–‰í• ìˆ˜ ìžˆëŠ”ë°
+		// ë¬¸ìžì—´ë“¤ì„ ì—°ê²°í•˜ë¼ëŠ” ê²ƒì´ë‹¤.
+		System.out.println("ëŒ€í•œë¯¼êµ­" + "ë§Œì„¸");
 		
-		System.out.println("´ëÇÑ¹Î±¹ + ¸¸¼¼");
+		System.out.println("ëŒ€í•œë¯¼êµ­ + ë§Œì„¸");
 
 	}
 }

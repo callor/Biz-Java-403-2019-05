@@ -10,19 +10,19 @@ public class Boolean_06 {
 		
 		boolean bYes = true;
 		
-		// && µÎ°³ ÀÌ»óÀÇ ºñ±³¿¬»ê°á°ú°¡ ¸ğµÎ trueÀÎ°¡¸¦ ÆÇ´Ü
-		// AND ¿¬»êÀÌ¶ó°í ÇÑ´Ù.
-		bYes = (num1 == num2) && (num3 == num4); // f and f : °á°ú false
-		bYes = num1 == num1 && num3 == num4; // t and f : °á°ú false
-		bYes = num1 == num2 && num3 == num3; // f and t : °á°ú false
-		bYes = num2 == num2 && num3 == num3; // t and t : °á°ú true
+		// && ë‘ê°œ ì´ìƒì˜ ë¹„êµì—°ì‚°ê²°ê³¼ê°€ ëª¨ë‘ trueì¸ê°€ë¥¼ íŒë‹¨
+		// AND ì—°ì‚°ì´ë¼ê³  í•œë‹¤.
+		bYes = (num1 == num2) && (num3 == num4); // f and f : ê²°ê³¼ false
+		bYes = num1 == num1 && num3 == num4; // t and f : ê²°ê³¼ false
+		bYes = num1 == num2 && num3 == num3; // f and t : ê²°ê³¼ false
+		bYes = num2 == num2 && num3 == num3; // t and t : ê²°ê³¼ true
 		
-		// || µÎ°³ ÀÌ»óÀÇ ºñ±³¿¬»ê°á°úÁß 1°³¶óµµ trueÀÎ°¡¸¦ ÆÇ´Ü
-		// OR ¿¬»êÀÌ¶ó°í ÇÑ´Ù.
-		bYes = num1 == num2 || num3 == num4; // f or f °á°ú false
-		bYes = num1 == num1 || num3 == num4; // t or f °á°ú true
-		bYes = num1 == num2 || num3 == num3; // f or t °á°ú true
-		bYes = num1 == num1 || num3 == num3; // t or t °á°ú true
+		// || ë‘ê°œ ì´ìƒì˜ ë¹„êµì—°ì‚°ê²°ê³¼ì¤‘ 1ê°œë¼ë„ trueì¸ê°€ë¥¼ íŒë‹¨
+		// OR ì—°ì‚°ì´ë¼ê³  í•œë‹¤.
+		bYes = num1 == num2 || num3 == num4; // f or f ê²°ê³¼ false
+		bYes = num1 == num1 || num3 == num4; // t or f ê²°ê³¼ true
+		bYes = num1 == num2 || num3 == num3; // f or t ê²°ê³¼ true
+		bYes = num1 == num1 || num3 == num3; // t or t ê²°ê³¼ true
 		
 		// (false or true) and false ==> true and false
 		bYes = (num1 == num2 || num3 == num3) && num4 == num3;

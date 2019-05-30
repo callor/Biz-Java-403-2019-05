@@ -4,17 +4,17 @@ public class HelloKorea {
 	public static void main(String[] args) {
 
 		
-		System.out.println("¿ì¸®³ª¶ó¸¸¼¼");
-		System.out.println("¿ì¸®³ª¶ó¸¸¼¼");
+		System.out.println("ìš°ë¦¬ë‚˜ë¼ë§Œì„¸");
+		System.out.println("ìš°ë¦¬ë‚˜ë¼ë§Œì„¸");
 		System.out.println("Koea");
 		System.out.println(30+40);
 		System.out.println("30+40");
-		System.out.println("´ëÇÑ¹Î±¹¸¸¼¼");
+		System.out.println("ëŒ€í•œë¯¼êµ­ë§Œì„¸");
 		System.out.println("======================");
-		System.out.println("ÀÌ¸§     ÀüÈ­¹øÈ£     ÁÖ¼Ò      ");
+		System.out.println("ì´ë¦„     ì „í™”ë²ˆí˜¸     ì£¼ì†Œ      ");
 		System.out.println("---------------------");
-		System.out.println("È«±æµ¿  001          ¼­¿ï½Ã");
-		System.out.println("ÀÌ¸ù·æ  002          ³²¿ø½Ã");
+		System.out.println("í™ê¸¸ë™  001          ì„œìš¸ì‹œ");
+		System.out.println("ì´ëª½ë£¡  002          ë‚¨ì›ì‹œ");
 		System.out.println("======================");
 		
 		

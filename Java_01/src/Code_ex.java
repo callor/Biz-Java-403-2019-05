@@ -2,6 +2,6 @@
 public class Code_ex {
 
 	public static void main(String[] args) {
-		System.out.println("´ëÇÑ¹Î±¹ ¸¸¼¼");
+		System.out.println("ëŒ€í•œë¯¼êµ­ ë§Œì„¸");
 	}
 }
