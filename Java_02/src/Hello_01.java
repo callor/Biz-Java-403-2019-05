@@ -19,9 +19,6 @@ public class Hello_01 {
 		bYes = 10 == 20;
 		
 		System.out.println("Git에 올리기");
-		System.out.println("Git에 올리기");
-		System.out.println("Git에 올리기");
-		System.out.println("Git에 올리기");
 		
 		
 		
