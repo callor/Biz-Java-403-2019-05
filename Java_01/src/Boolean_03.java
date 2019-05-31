@@ -8,26 +8,26 @@ public class Boolean_03 {
 		
 		boolean bYes = true;
 		
-		// intNum1¿¡ ´ã±ä °ª°ú intNum2¿¡ ´ã±ä °ªÀÌ °°³Ä?
+		// intNum1ì— ë‹´ê¸´ ê°’ê³¼ intNum2ì— ë‹´ê¸´ ê°’ì´ ê°™ëƒ?
 		bYes = intNum1 == intNum2;
 		
-		// intNum1¿¡ ´ã±ä °ªÀÌ intNum2¿¡ ´ã±ä °ªº¸´Ù Å©³Ä
+		// intNum1ì— ë‹´ê¸´ ê°’ì´ intNum2ì— ë‹´ê¸´ ê°’ë³´ë‹¤ í¬ëƒ
 		bYes = intNum1 > intNum2;
 		
-		// intNum1¿¡ ´ã°Ü(ÀúÀå)ÀÖ´Â °ªÀ» º¹»ç(ÀĞ±â)ÇØ¼­
-		// intNum2¿¡ ÀúÀå(´ëÀÔ,ÇÒ´ç)ÇÏ¶ó
-		// º¯¼ö°¡ º¯¼ö¿¡ ÀúÀåµÇ´Â °ÍÀÌ ¾Æ´Ï´Ù!!!!
+		// intNum1ì— ë‹´ê²¨(ì €ì¥)ìˆëŠ” ê°’ì„ ë³µì‚¬(ì½ê¸°)í•´ì„œ
+		// intNum2ì— ì €ì¥(ëŒ€ì…,í• ë‹¹)í•˜ë¼
+		// ë³€ìˆ˜ê°€ ë³€ìˆ˜ì— ì €ì¥ë˜ëŠ” ê²ƒì´ ì•„ë‹ˆë‹¤!!!!
 		intNum2 = intNum1;
-		bYes = intNum1 > intNum2 ; // °á°ú : false
+		bYes = intNum1 > intNum2 ; // ê²°ê³¼ : false
 		
-		// intNum1ÀÌ intNum2º¸´Ù Å©°Å³ª °°³Ä?
-		bYes = intNum1 >= intNum2 ; // °á°ú : true
+		// intNum1ì´ intNum2ë³´ë‹¤ í¬ê±°ë‚˜ ê°™ëƒ?
+		bYes = intNum1 >= intNum2 ; // ê²°ê³¼ : true
 		
-		// intNum1ÀÌ intNum2º¸´Ù ÀÛ°Å³ª °°³Ä?
-		bYes = intNum1 <= intNum2; // °á°ú : true
+		// intNum1ì´ intNum2ë³´ë‹¤ ì‘ê±°ë‚˜ ê°™ëƒ?
+		bYes = intNum1 <= intNum2; // ê²°ê³¼ : true
 		
 		intNum1 = 100;
-		bYes = intNum1 == intNum2; // °á°ú : false
+		bYes = intNum1 == intNum2; // ê²°ê³¼ : false
 		
 		
 		

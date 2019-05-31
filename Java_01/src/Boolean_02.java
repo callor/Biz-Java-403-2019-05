@@ -9,13 +9,13 @@ public class Boolean_02 {
 		bYes = intNum == 50;
 		System.out.println(bYes);
 		
-		// 1. intNum¿¡ ´ã±ä 20À» ¿¬»êÀåÄ¡·Î °¡Á®¿À±â
-		// 2. ¾îµò°¡ ÀúÀåµÈ 30À» ¿¬»êÀåÄ¡·Î °¡Á®¿À±â
-		// 3. intNum¿¡¼­ 30À» »¬¼À, °á°ú : -10
-		// 4. intNum¿¡ ´ã±ä 20À» ¶Ç ¿¬»êÀåÄ¡·Î °¡Á®¿À±â
-		// 5. 3¿¡¼­ °è»êµÈ °á°ú -10À» ¿¬»êÀåÄ¡·Î °¡Á®¿À±â
-		// 6. µÎ °ªÀ» ºñ±³(°°³Ä?) 
-		// 7. °á°úÀÎ false¸¦ bYes¿¡ ´ã±â
+		// 1. intNumì— ë‹´ê¸´ 20ì„ ì—°ì‚°ìž¥ì¹˜ë¡œ ê°€ì ¸ì˜¤ê¸°
+		// 2. ì–´ë”˜ê°€ ì €ìž¥ëœ 30ì„ ì—°ì‚°ìž¥ì¹˜ë¡œ ê°€ì ¸ì˜¤ê¸°
+		// 3. intNumì—ì„œ 30ì„ ëº„ì…ˆ, ê²°ê³¼ : -10
+		// 4. intNumì— ë‹´ê¸´ 20ì„ ë˜ ì—°ì‚°ìž¥ì¹˜ë¡œ ê°€ì ¸ì˜¤ê¸°
+		// 5. 3ì—ì„œ ê³„ì‚°ëœ ê²°ê³¼ -10ì„ ì—°ì‚°ìž¥ì¹˜ë¡œ ê°€ì ¸ì˜¤ê¸°
+		// 6. ë‘ ê°’ì„ ë¹„êµ(ê°™ëƒ?) 
+		// 7. ê²°ê³¼ì¸ falseë¥¼ bYesì— ë‹´ê¸°
 		bYes = intNum == intNum - 30;
 		bYes = 20 == 20 - 30;
 		bYes = 20 == -10;

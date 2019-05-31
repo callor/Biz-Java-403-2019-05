@@ -3,12 +3,12 @@ public class Hello_Var_String {
 
 	public static void main(String[] args) {
 
-		// ¹®ÀÚ¿­À» ÀúÀåÇÏ±â À§ÇÑ º¯¼ö(±â¾ï°ø°£)À» ¼±¾ğÇÏ´Â
-		// Å°¿öµå´Â StringÀÌ°í Ã¹±ÛÀÚ°¡ ´ë¹®ÀÚ´Ù.
+		// ë¬¸ìì—´ì„ ì €ì¥í•˜ê¸° ìœ„í•œ ë³€ìˆ˜(ê¸°ì–µê³µê°„)ì„ ì„ ì–¸í•˜ëŠ”
+		// í‚¤ì›Œë“œëŠ” Stringì´ê³  ì²«ê¸€ìê°€ ëŒ€ë¬¸ìë‹¤.
 		String nation = "Republic of Korea";
-		String korea = "´ëÇÑ¹Î±¹";
+		String korea = "ëŒ€í•œë¯¼êµ­";
 		
-		System.out.println(korea +"Àº " + nation + "ÀÔ´Ï´Ù");
+		System.out.println(korea +"ì€ " + nation + "ì…ë‹ˆë‹¤");
 		
 	}
 

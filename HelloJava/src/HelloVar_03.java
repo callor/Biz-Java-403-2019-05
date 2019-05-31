@@ -4,10 +4,10 @@ public class HelloVar_03 {
 	public static void main(String[] args) {
 		
 		int kor = 90;
-		System.out.println("±¹¾îÁ¡¼ö:" + kor);
+		System.out.println("êµ­ì–´ì ìˆ˜:" + kor);
 		
 		int eng = 80;
-		System.out.println("¿µ¾îÁ¡¼ö:" + eng);
+		System.out.println("ì˜ì–´ì ìˆ˜:" + eng);
 
 		System.out.println(kor + eng);
 

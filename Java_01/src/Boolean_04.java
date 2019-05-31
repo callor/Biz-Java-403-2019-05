@@ -3,18 +3,18 @@ public class Boolean_04 {
 
 	public static void main(String[] args) {
 
-		// intNum1°ú intNum2¸¦ »ç¿ëÇÒ ÁØºñ¸¦ ÇÏ´Â ¼±¾ğ
+		// intNum1ê³¼ intNum2ë¥¼ ì‚¬ìš©í•  ì¤€ë¹„ë¥¼ í•˜ëŠ” ì„ ì–¸
 		int intNum1 = 0;
 		int intNum2 = 0;
 		System.out.println(intNum1);
 		
-		// º¯¼ö¸¦ ¼±¾ğÇÒ¶§
-		// °ªÀ» ¾Æ¹«°Íµµ ´ëÀÔÇÏÁö ¾ÊÀ¸¸é
-		// º¯¼ö´Â »ç¿ëÇÒ ÁØºñ°¡ µÇÁö ¾ÊÀº »óÅÂ°¡ µÈ´Ù.
-		// ±×·±µ¥ º¯¼ö³»¿ëÀ» ÀĞ±â¸¦ ½ÃµµÇÏ¸é
-		// ¹®¹ı¿À·ù°¡ ³­´Ù.
+		// ë³€ìˆ˜ë¥¼ ì„ ì–¸í• ë•Œ
+		// ê°’ì„ ì•„ë¬´ê²ƒë„ ëŒ€ì…í•˜ì§€ ì•Šìœ¼ë©´
+		// ë³€ìˆ˜ëŠ” ì‚¬ìš©í•  ì¤€ë¹„ê°€ ë˜ì§€ ì•Šì€ ìƒíƒœê°€ ëœë‹¤.
+		// ê·¸ëŸ°ë° ë³€ìˆ˜ë‚´ìš©ì„ ì½ê¸°ë¥¼ ì‹œë„í•˜ë©´
+		// ë¬¸ë²•ì˜¤ë¥˜ê°€ ë‚œë‹¤.
 		int intNum3;
-		// System.out.println(intNum3); // ¹®¹ı¿À·ù ¹ß»ı
+		// System.out.println(intNum3); // ë¬¸ë²•ì˜¤ë¥˜ ë°œìƒ
 		
 		intNum3 = 30;
 		System.out.println(intNum3);
@@ -33,8 +33,8 @@ public class Boolean_04 {
 		bYes = intNum1 >= intNum2; // false;
 		bYes = intNum1 <= intNum2; // true;
 		
-		// != : not ¿¬»êÀÚ
-		// µÎ°ªÀÌ ´Ù¸£³Ä?
+		// != : not ì—°ì‚°ì
+		// ë‘ê°’ì´ ë‹¤ë¥´ëƒ?
 		bYes = intNum1 != intNum2; // true
 		
 		intNum1 = intNum2;

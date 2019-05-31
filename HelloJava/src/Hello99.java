@@ -3,7 +3,7 @@ public class Hello99 {
 
 	public static void main(String[] args) {
 
-		System.out.println("2´Ü ±¸±¸´Ü");
+		System.out.println("2ë‹¨ êµ¬êµ¬ë‹¨");
 		System.out.println("2 x 2 = 4");
 		System.out.println("2 x 3 = 6");
 		System.out.println("2 x 4 = 8");

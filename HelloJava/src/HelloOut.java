@@ -1,28 +1,28 @@
 // sysout + ^space : System.out.println() 
 // main + ^space : public static .. main()
-// ^s : ÀúÀåÇÏ±â
+// ^s : ì €ìž¥í•˜ê¸°
 // ^F11 : Run
-// Ctrol + Shift + F : µé¿©¾²±â ÀÚµ¿ Á¤¸®
+// Ctrol + Shift + F : ë“¤ì—¬ì“°ê¸° ìžë™ ì •ë¦¬
 
-// ^z : ¹Ù·ÎÀü ¼öÇàÇÑ ÀÛ¾÷ Ãë¼Ò
+// ^z : ë°”ë¡œì „ ìˆ˜í–‰í•œ ìž‘ì—… ì·¨ì†Œ
 
-// shift + ¹æÇâÅ°, End, Home : ºí·°, ¹üÀ§ ¼³Á¤
+// shift + ë°©í–¥í‚¤, End, Home : ë¸”ëŸ­, ë²”ìœ„ ì„¤ì •
 // ^C & ^V
 
-// ^d : ÇÑÁÙ »èÁ¦
+// ^d : í•œì¤„ ì‚­ì œ
 
-// (¾î¶²)Å°¿öµå + ^space : »óÈ²¿¡ µû¶ó ¿©·¯ µµ¿ò(Assist)±â´É È£Ãâ
+// (ì–´ë–¤)í‚¤ì›Œë“œ + ^space : ìƒí™©ì— ë”°ë¼ ì—¬ëŸ¬ ë„ì›€(Assist)ê¸°ëŠ¥ í˜¸ì¶œ
 
 public class HelloOut {
 	public static void main(String[] args) {
 		
-		// 1. 30À» ±â¾ïÀåÄ¡ ¾î¶² °÷¿¡ ÀÓ½Ã·Î ÀúÀå
-		// 2. 40À» ±â¾ïÀåÄ¡ ¾î¶² °÷¿¡ ÀÓ½Ã·Î ÀúÀå
-		// 3. +±âÈ£¸¦ ¸¸³ª¸é
-		// 4. 30À» ±â¾ïÀåÄ¡¿¡¼­ ¿¬»êÀåÄ¡·Î ÀÌµ¿
-		// 5. 40À» ±â¾ïÀåÄ¡¿¡¼­ ¿¬»êÀåÄ¡·Î ÀÌµ¿
-		// 6. ¿¬»êÀåÄ¡¿¡¼­ µÎ ¼ö¸¦ µ¡¼À
-		// 7. µ¡¼ÀÇÑ °á°ú¸¦ ±â¾ïÀåÄ¡ ¾î¶² °÷¿¡ ´Ù½Ã ÀÓ½Ã·Î ÀúÀå
+		// 1. 30ì„ ê¸°ì–µìž¥ì¹˜ ì–´ë–¤ ê³³ì— ìž„ì‹œë¡œ ì €ìž¥
+		// 2. 40ì„ ê¸°ì–µìž¥ì¹˜ ì–´ë–¤ ê³³ì— ìž„ì‹œë¡œ ì €ìž¥
+		// 3. +ê¸°í˜¸ë¥¼ ë§Œë‚˜ë©´
+		// 4. 30ì„ ê¸°ì–µìž¥ì¹˜ì—ì„œ ì—°ì‚°ìž¥ì¹˜ë¡œ ì´ë™
+		// 5. 40ì„ ê¸°ì–µìž¥ì¹˜ì—ì„œ ì—°ì‚°ìž¥ì¹˜ë¡œ ì´ë™
+		// 6. ì—°ì‚°ìž¥ì¹˜ì—ì„œ ë‘ ìˆ˜ë¥¼ ë§ì…ˆ
+		// 7. ë§ì…ˆí•œ ê²°ê³¼ë¥¼ ê¸°ì–µìž¥ì¹˜ ì–´ë–¤ ê³³ì— ë‹¤ì‹œ ìž„ì‹œë¡œ ì €ìž¥
 		
 		System.out.println(30+40);
 	
