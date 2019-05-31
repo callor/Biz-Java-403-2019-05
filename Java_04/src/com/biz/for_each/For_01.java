@@ -1,4 +1,4 @@
-package com.biz.hello;
+package com.biz.for_each;
 
 public class For_01 {
 
