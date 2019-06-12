@@ -18,9 +18,11 @@ public class Scanner_07 {
 		 * 하시오
 		 */
 		Random rnd = new Random();
+		Scanner scan = new Scanner(System.in);
+		
 		int intRnd = rnd.nextInt(10)+1; 
 		
-		Scanner scan = new Scanner(System.in);
+		
 
 		int intCount = 0;
 		while(true) {
