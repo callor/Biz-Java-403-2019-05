@@ -20,13 +20,17 @@ public class Scanner_05 {
 		// 몇번만에 숫자를 맞추었는지 알아보고
 		// 숫자를 맞추면
 		// * 번만에 맞추었네요 라고 메시지를 보여주기
+		
+		int intCount = 0;
 		while(true) {
 			System.out.print("숫자(1~10)입력 >> ");
 			String strKey = scan.nextLine();
 			int intKey = Integer.valueOf(strKey.trim());
+			++intCount;
 			
 			if(intKey == intRnd) {
 				System.out.println("참 잘했어요");
+				System.out.println(intCount + "번만에 맞추었네요");
 				break;
 			}
 			if(intKey > intRnd) {
@@ -34,6 +38,8 @@ public class Scanner_05 {
 			} else if(intKey < intRnd) {
 				System.out.println("작은수를 입력했군요");
 			}
+		
+
 		}
 		System.out.println("GAME Over!!");
 	}
