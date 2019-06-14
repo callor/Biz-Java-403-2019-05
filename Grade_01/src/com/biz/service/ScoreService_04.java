@@ -13,10 +13,9 @@ public class ScoreService_04 implements ScoreService {
 	
 	public ScoreService_04() {
 	
-		scList = new ArrayList<ScoreVO>();
+		// scList = new ArrayList<ScoreVO>();
 		scList = new LinkedList<ScoreVO>();
-		scList = new Vector<ScoreVO>();
-		
+		// scList = new Vector<ScoreVO>();
 		
 	}
 	
