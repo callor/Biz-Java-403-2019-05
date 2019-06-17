@@ -13,10 +13,13 @@ public class Exec_01 {
 		for(int i = 1; i <= 45 ;i++) {
 			intList.add(i);
 		}
-		Collections.shuffle(intList);
-
-		for(int i = 0 ; i < 6 ;i++) {
-			System.out.print(intList.get(i) + "\t");
+		
+		for(int j = 0 ; j < 10 ; j++) {
+			Collections.shuffle(intList);
+			for(int i = 0 ; i < 6 ;i++) {
+				System.out.print(intList.get(i) + "\t");
+			}
+			System.out.println();
 		}
 
 	}
