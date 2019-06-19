@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
+import com.biz.bank.model.BankBalanceVO;
 import com.biz.bank.service.BankService;
 import com.biz.bank.service.BankServiceImp_01;
 
@@ -26,7 +27,7 @@ public class BankExec_01 {
 			
 			// try내에서 다시 객체를 초기화해서
 			// 사용할수 있도록 생성
-			bs = new BankServiceImp_01(fileName);
+			bs = new BankServiceImp_02(fileName);
 			bs.readBalance();
 			
 		} catch (FileNotFoundException e) {
@@ -53,6 +54,12 @@ public class BankExec_01 {
 			
 			System.out.print("계좌번호>>");
 			String accNum = scan.nextLine();
+			
+			BankBalanceVO vo = bs.pickAcc(accNum);
+			if(vo == null) {
+				System.out.println("계좌번호가 없습니다");
+				continue;
+			}
 			
 			// 입금처리
 			if(intMenu == 1 ) {

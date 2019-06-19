@@ -9,22 +9,25 @@ import java.io.PrintWriter;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
 
 import com.biz.bank.model.BankBalanceVO;
 
-public class BankServiceImp_01 implements BankService {
+public class BankServiceImp_02 implements BankService {
 
 	String accIolistPath = null ;
 	String balanceFile = null;
-	List<BankBalanceVO> balanceList = null;
+	
+	Map<String, BankBalanceVO> balanceList = null;
+	
 	FileReader fileReader = null;
 	BufferedReader buffer = null;
 	Scanner scan = null;
 	
-	public BankServiceImp_01(String balanceFile) throws FileNotFoundException {
+	public BankServiceImp_02(String balanceFile) throws FileNotFoundException {
 
 		/*
 		 * balanceFile 이름을 필드에 있는
@@ -35,19 +38,24 @@ public class BankServiceImp_01 implements BankService {
 		
 		// iolist를 저장할 폴더 선언
 		accIolistPath = "src/com/biz/bank/iolist/";
-		balanceList = new ArrayList<BankBalanceVO>();
+		
+		/*
+		 * Map 자료구조는 HashMap, LinkedHashMap, TreeMap 가 있는데
+		 * 키로 값을 검색하는 일이 많을 때는 TreeMap으로
+		 * 초기화 하는 것이 매우 효율적이다.
+		 */
+		balanceList = new TreeMap<String,BankBalanceVO>();
+		
 		fileReader = new FileReader(balanceFile);
 		buffer = new BufferedReader(fileReader);
 		scan = new Scanner(System.in);
+		
 	}
-
 	
-	/*
-	 * balance.txt 파일을 읽어서
-	 * 계좌정보를 balanceList에 추가하는 메서드를 작성
-	 */
+	
+	
+	@Override
 	public void readBalance() throws IOException {
-
 		String reader = "";
 		while(true) {
 			
@@ -63,37 +71,41 @@ public class BankServiceImp_01 implements BankService {
 			vo.setAcc(banks[0]);
 			vo.setBalance(Integer.valueOf(banks[1]));
 			vo.setDate(banks[2]);
-			
-			balanceList.add(vo);
+
+			// Map의 구조를 계좌번호를 Key하고
+			// 값을 vo로 설정
+			// Map에는 put() 메서드를 이용해서 List추가
+			balanceList.put(banks[0], vo);
+
 		}
-		
-		// balance.txt 파일을 처음한번 읽어서
-		// balanceList에 담고 나면
-		// buffer와 fileReader는 하는일 끝나므로
-		// 두 객체 모두 close() 실행하자
-		// ※ 프로젝트가 종료될때
-		//	balance.txt 파일에 내용을 기록해야하는데
-		//	reader 상태로 열려 있으면
-		//	기록이 잘 안되는 경우가 있기 때문이다.
 		buffer.close();
 		fileReader.close();
-		
-	} // readBalance end
-	// String acc = "0001";
-	
-	/*
-	 * 이 메서드는 프로젝트가 종료되기 직전에 실행되어서
-	 * balanceList에 담긴 내용을 balance.txt에 몽땅 기록한다.
-	 */
+	}
+
+	@Override
 	public void writeBalance() throws IOException {
-		
 		FileWriter fileWriter;
 		PrintWriter printWriter;
 
 		fileWriter = new FileWriter(balanceFile);
 		printWriter = new PrintWriter(fileWriter);
 		
-		for(BankBalanceVO vo : balanceList) {
+		/*
+		 * Map 구조에 저장된 
+		 * List를 vo로 추출해서 사용하기위 해서는
+		 * 먼저 Map 구조에 있는 key들을 Set 구조로 추출
+		 */
+		Set<String> keyList = balanceList.keySet();
+		
+		/*
+		 * 추출된 keySet을 for문으로 반복하면서
+		 * map.get(key) 메서드를 호출해서
+		 * vo를 하나씩 추출한다.
+		 * 
+		 * 그리고 알아서 요리한다.
+		 */
+		for( String key : keyList) {
+			BankBalanceVO vo = balanceList.get(key);
 			printWriter.printf("%s:%d:%s\n",
 					vo.getAcc(),
 					vo.getBalance(),
@@ -102,58 +114,30 @@ public class BankServiceImp_01 implements BankService {
 		
 		printWriter.flush();
 		printWriter.close();
+
 	}
-	
-	
-	/*
-	 * balanceList 에서 
-	 * 계좌번호 0001인 데이터를 찾고
-	 * 그 계좌의 현잔액을 console에 표시
-	 */
+
+	@Override
 	public BankBalanceVO pickAcc(String accNum) {
+
+		/*
+		 * Map 구조에 저장된 어떤 값을 찾을때는
+		 * key 값만 알면 아주 단순한코드로 값을 찾을수 있다
+		 * 
+		 * get(key)메서드는 Map 자료에 해당하는 key가 있으면
+		 * 해당하는 값을 return 할 것이고
+		 * 
+		 * 그렇지 않으면 null을 리턴 할 것이다.
+		 */
+		return balanceList.get(accNum);
+		// return null;
 		
-		int bankSize = balanceList.size();
-		int index = 0;
-		BankBalanceVO vo = null;
-		
-		for(index = 0 ; index < bankSize ; index++) {
-			vo = balanceList.get(index);
-			if(vo.getAcc().equals(accNum)) {
-				return vo;
-			}
-		}
-		return null;
-	} // pickAcc end
-	
-	/*
-	 * 계좌번호로 pickAcc()로부터 vo 값을 추출하고
-	 * balance값과 mony 값을 더하여 
-	 * vo의 balance에 저장하고
-	 * 콘솔에 보여주는 코드
-	 */
+	}
+
+	@Override
 	public void inputMoney(String acc, int money) {
-		/*
-		for(BankBalanceVO vo : balanceList) {
-			System.out.println(vo);
-		}
-		*/
 		
-		/*
-		 * 만약 acc(계좌번호)가 없는 데이터를
-		 * pickAcc()메서드에게 보내면
-		 * pickAcc()메서드는 null값을 return 할 것이다.
-		 * 
-		 * 이런 상황이되면
-		 * 이후 코드에서 NullpointException이 발생을 한다.
-		 * 
-		 */
 		BankBalanceVO vo = pickAcc(acc);
-		
-		/*
-		 * vo 값이 null인경우는 다음코드로 진행하지 못하도록
-		 * 하며
-		 * 그 전에 사용자에게 메시지를 보여주어야 한다.
-		 */
 		if(vo == null) {
 			System.out.println("계좌번호가 없습니다!!");
 			return ;
@@ -162,17 +146,6 @@ public class BankServiceImp_01 implements BankService {
 		int bal = vo.getBalance();
 		vo.setBalance(bal + money);
 
-		// java 1.7 이하에서 지금도 사용하는 코드
-		// 현재 컴퓨터날짜값을 가져오기
-		Date date 
-		= new Date(System.currentTimeMillis());
-		
-		SimpleDateFormat sf 
-			= new SimpleDateFormat("yyyy-MM-dd");
-		
-		String curDate = sf.format(date);
-		vo.setDate(curDate);
-		
 		// java 1.8(8) 이상에서 사용하는 새로운 날짜
 		LocalDate localDate = LocalDate.now();
 		vo.setDate(localDate.toString());
@@ -181,7 +154,6 @@ public class BankServiceImp_01 implements BankService {
 		System.out.println("============================");
 		System.out.println(vo);
 		System.out.println("============================");
-		
 		
 		FileWriter fileWriter;
 		PrintWriter printWriter;
@@ -193,20 +165,6 @@ public class BankServiceImp_01 implements BankService {
 		 * 입출금 거래내역을 개인통장에 기록
 		 */
 		try {
-			/*
-			 * create mode :
-			 * fileWriter로 파일을 기록하기 위해서 실행하면
-			 * 기존에 같은 이름의 파일이 있으면
-			 * 삭제하고 새로 생성을 한다
-			 * 
-			 * 
-			 * append mode :
-			 * 만약 기존에 파일 내용을 유지하면서
-			 * 파일의 끝에 새로운 내용을 추가로 저장하고 싶으면
-			 * new FileWriter() 생성자 끝에 true 옵션을 추가한다.
-			 *  
-			 * 
-			 */
 			fileWriter = new FileWriter(accIolistPath 
 							+ "KBANK_" + accNum,true);
 			printWriter = new PrintWriter(fileWriter);
@@ -226,15 +184,11 @@ public class BankServiceImp_01 implements BankService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
-		
+
 	}
 
-	
+	@Override
 	public void outputMoney(String acc, int money) {
-		
 		BankBalanceVO vo = pickAcc(acc);
 		if(vo == null) {
 			System.out.println("계좌번호가 없습니다!!");
@@ -298,14 +252,9 @@ public class BankServiceImp_01 implements BankService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
 	}
 
-	
-	
-	
+	@Override
 	public int selectMenu() {
 		System.out.println("==========================");
 		System.out.println("1. 입금   2.출금   -9.종료");
@@ -321,4 +270,5 @@ public class BankServiceImp_01 implements BankService {
 		}
 		return intMenu;
 	}
+
 }
