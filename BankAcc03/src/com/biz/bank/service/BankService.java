@@ -26,6 +26,7 @@ import com.biz.bank.model.BankBalanceVO;
 public interface BankService {
 
 	public void readBalance() throws IOException;
+	public void writeBalance() throws IOException ;
 	public BankBalanceVO pickAcc(String accNum);
 	public void inputMoney(String acc, int money);
 	public void outputMoney(String acc, int money);

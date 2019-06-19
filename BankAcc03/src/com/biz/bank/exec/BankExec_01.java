@@ -41,7 +41,15 @@ public class BankExec_01 {
 			
 			int intMenu = bs.selectMenu();
 
-			if(intMenu == -9) break;
+			if(intMenu == -9) {
+				try {
+					bs.writeBalance();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				break;
+			}
 			
 			System.out.print("계좌번호>>");
 			String accNum = scan.nextLine();

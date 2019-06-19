@@ -18,17 +18,25 @@ import com.biz.bank.model.BankBalanceVO;
 public class BankServiceImp_01 implements BankService {
 
 	String accIolistPath = null ;
+	String balanceFile = null;
 	List<BankBalanceVO> balanceList = null;
 	FileReader fileReader = null;
 	BufferedReader buffer = null;
 	Scanner scan = null;
 	
-	public BankServiceImp_01(String fileName) throws FileNotFoundException {
+	public BankServiceImp_01(String balanceFile) throws FileNotFoundException {
 
+		/*
+		 * balanceFile 이름을 필드에 있는
+		 * this.balanceFile 에 저장하여
+		 * 클래스내에서 자유롭게 접근할수 있도록 한다.
+		 */
+		this.balanceFile = balanceFile;
+		
 		// iolist를 저장할 폴더 선언
 		accIolistPath = "src/com/biz/bank/iolist/";
 		balanceList = new ArrayList<BankBalanceVO>();
-		fileReader = new FileReader(fileName);
+		fileReader = new FileReader(balanceFile);
 		buffer = new BufferedReader(fileReader);
 		scan = new Scanner(System.in);
 	}
@@ -42,6 +50,7 @@ public class BankServiceImp_01 implements BankService {
 
 		String reader = "";
 		while(true) {
+			
 			reader = buffer.readLine();
 			if(reader == null) break;
 			String[] banks = reader.split(":");
@@ -57,8 +66,44 @@ public class BankServiceImp_01 implements BankService {
 			
 			balanceList.add(vo);
 		}
+		
+		// balance.txt 파일을 처음한번 읽어서
+		// balanceList에 담고 나면
+		// buffer와 fileReader는 하는일 끝나므로
+		// 두 객체 모두 close() 실행하자
+		// ※ 프로젝트가 종료될때
+		//	balance.txt 파일에 내용을 기록해야하는데
+		//	reader 상태로 열려 있으면
+		//	기록이 잘 안되는 경우가 있기 때문이다.
+		buffer.close();
+		fileReader.close();
+		
 	} // readBalance end
 	// String acc = "0001";
+	
+	/*
+	 * 이 메서드는 프로젝트가 종료되기 직전에 실행되어서
+	 * balanceList에 담긴 내용을 balance.txt에 몽땅 기록한다.
+	 */
+	public void writeBalance() throws IOException {
+		
+		FileWriter fileWriter;
+		PrintWriter printWriter;
+
+		fileWriter = new FileWriter(balanceFile);
+		printWriter = new PrintWriter(fileWriter);
+		
+		for(BankBalanceVO vo : balanceList) {
+			printWriter.printf("%s:%d:%s\n",
+					vo.getAcc(),
+					vo.getBalance(),
+					vo.getDate());
+		}
+		
+		printWriter.flush();
+		printWriter.close();
+	}
+	
 	
 	/*
 	 * balanceList 에서 
@@ -199,6 +244,36 @@ public class BankServiceImp_01 implements BankService {
 		System.out.println("============================");
 		System.out.println(vo);
 		System.out.println("============================");
+		
+		FileWriter fileWriter;
+		PrintWriter printWriter;
+		
+		String accNum = vo.getAcc();
+		
+		/*
+		 * 출금 거래내역을 개인통장에 기록
+		 */
+		try {
+			fileWriter = new FileWriter(accIolistPath 
+							+ "KBANK_" + accNum,true);
+			printWriter = new PrintWriter(fileWriter);
+			
+			// 파일에 내용을 기록하는 부분
+			printWriter.printf("%s:%s:%d:%d:%d\n",
+					vo.getDate(),
+					"출금",
+					0,
+					money,
+					vo.getBalance());
+			
+			printWriter.flush();
+			printWriter.close();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		
 	}
