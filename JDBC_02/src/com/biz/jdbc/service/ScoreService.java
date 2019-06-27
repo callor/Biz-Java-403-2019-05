@@ -8,6 +8,9 @@ public interface ScoreService {
 
 	public List<ScoreVO> selectAll();
 	public ScoreVO findById(long sc_seq);
+	
+	public List<ScoreVO> findByNum(String st_no);
+	
 	public int insert(ScoreVO vo);
 	public int update(ScoreVO vo);
 	public int delete(long sc_seq);

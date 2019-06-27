@@ -10,7 +10,10 @@ import java.util.List;
 
 import javax.print.attribute.standard.PresentationDirection;
 
+import com.biz.jdbc.config.DbConnection;
 import com.biz.jdbc.model.StudentVO;
+
+import oracle.jdbc.driver.DBConversion;
 
 /*
  * StdService interface(설계도)에 기반한
@@ -23,13 +26,13 @@ public class StdServiceImp_01 implements StdService {
 	private List<StudentVO> stdList = null;
 	
 	private Connection dbConn = null;
-	private String jdbcDriver 
-		= "oracle.jdbc.driver.OracleDriver";
-	
-	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
-	private String userName = "user5" ;
-	private String password = "1234" ;
-	
+//	private String jdbcDriver 
+//		= "oracle.jdbc.driver.OracleDriver";
+//	
+//	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+//	private String userName = "user5" ;
+//	private String password = "1234" ;
+//	
 	public StdServiceImp_01() {
 		// 데이터 리스트를 만들어서 외부로 전달하기 위해 사용하는
 		// stdList를 생성자에서 초기화를 하고 계속 사용을 하면
@@ -37,29 +40,29 @@ public class StdServiceImp_01 implements StdService {
 		// 리스트를 초기화 하는 코드는
 		// 리스트를 만들기 직전에 위치 해야 한다.
 		// stdList = new ArrayList<StudentVO>();
-		this.dbConnection();
+		this.dbConn = DbConnection.getDBConnection();
 	}
 	
 	// dbConnection은 외부에서 실행하지 못하도록 private으로 선언한다.
 	// dbConnection이 자주 실행되는 것은 Driver를 계속 On Load시키고
 	// 통로를 새로 설정하는 과정이 반복되어 문제를 일으킬 수 있기 때문이다.
-	private void dbConnection() {
-		try {
-			//1. jdbcDriver ON load 시키기
-			Class.forName(jdbcDriver);
-			
-			//2. 연결 통로(port)를 설정하기
-			dbConn = DriverManager.getConnection(url,userName,password);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-	}
+//	private void dbConnection() {
+//		try {
+//			//1. jdbcDriver ON load 시키기
+//			Class.forName(jdbcDriver);
+//			
+//			//2. 연결 통로(port)를 설정하기
+//			dbConn = DriverManager.getConnection(url,userName,password);
+//		} catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		
+//	}
 	
 	
 	@Override
