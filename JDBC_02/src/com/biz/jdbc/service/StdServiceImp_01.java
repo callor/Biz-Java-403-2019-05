@@ -177,7 +177,7 @@ public class StdServiceImp_01 implements StdService {
 		sql += " ST_WEIGHT, ";	// 6
 		sql += " ST_NICK, ";	// 7
 		sql += " ST_NICK_REM, ";	// 8
-		sql += " ST_DEPT_NAME ) ";	// 9
+		sql += " ST_DEPT_NAME,) ";	// 9
 		sql += " VALUES(?,?,?,?,?,?,?,?,?) ";
 		
 		PreparedStatement ps = null;
