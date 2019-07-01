@@ -15,6 +15,11 @@
 		<typeAlias 
 			type="com.biz.mybatis.model.StudentVO" 
 			alias="StdVO" />
+
+		<typeAlias 
+			type="com.biz.mybatis.model.ScoreVO" 
+			alias="ScVO" />
+
 	</typeAliases>
 
 <!-- 
@@ -48,6 +53,7 @@
 			클래스와 메서드를 대신 생성해준다.
 		 -->
 		<mapper resource="com/biz/mybatis/config/std-mapper.xml"   />
+		<mapper resource="com/biz/mybatis/config/score-mapper.xml"   />
 	</mappers>
 
 </configuration>

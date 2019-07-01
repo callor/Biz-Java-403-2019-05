@@ -13,8 +13,34 @@
 		SELECT * FROM tbl_student
 	</select>
 
-	<select id="findByNum" resultType="StdVO">
+	<select id="findByNum" 
+			resultType="StdVO" 
+			parameterType="String">
+			
 		SELECT * FROM tbl_student WHERE st_num = #{st_num}
 	</select>
-
+	
+	<insert id="insert" parameterType="StdVO">
+		INSERT INTO tbl_student( ST_NUM,
+							ST_NAME,
+							ST_TEL,
+							ST_GRADE  )
+		values( #{st_num},
+				#{st_name},
+				#{st_tel},
+				#{st_grade} )			
+	</insert>
+	
+	<update id="update" parameterType="StdVO">
+		UPDATE tbl_student
+		SET ST_NAME = #{st_name},
+			ST_TEL = #{st_tel},
+			ST_GRADE = #st_grade}
+		WHERE ST_NUM = #{st_num}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		DELETE FROM tbl_student
+		WHERE st_num = #{st_num}
+	</delete>
 </mapper>

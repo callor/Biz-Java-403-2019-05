@@ -1,4 +1,4 @@
-package com.biz.mybatis;
+package com.biz.mybatis.exec;
 
 import java.util.List;
 
