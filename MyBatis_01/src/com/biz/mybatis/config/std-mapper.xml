@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	com.biz.mybatis.dao.StudentDao 인터페이스를 
+	mapper의
+	namespace라는 값으로 설정하겠다.
+ -->
+<mapper namespace="com.biz.mybatis.dao.StudentDao">
+
+	<select id="selectAll" resultType="StdVO">
+		SELECT * FROM tbl_student
+	</select>
+
+	<select id="findByNum" resultType="StdVO">
+		SELECT * FROM tbl_student WHERE st_num = #{st_num}
+	</select>
+
+</mapper>

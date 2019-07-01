@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+ <!-- 
+ 	configuration
+ 	DBConnection에서 설정했던 
+ 	Driver 설정,
+ 	DB 연결 설정 에 대한 사항을 
+ 	작성하는 부분
+  -->
+<configuration>
+
+	<typeAliases>
+		<typeAlias 
+			type="com.biz.mybatis.model.StudentVO" 
+			alias="StdVO" />
+	</typeAliases>
+
+<!-- 
+	주석문, XML에서 주석문을 작성할때 간혹 기본 tag와 섞여서
+	XML 문법 오류를 발생하는 경우가 많다.
+	주석을 쓸때 위치를 잘 고려해서 사용해야 하고
+	알수 없는 문법 오류가 발생을 하면
+	먼저 주석을 제거하고 사용해 보는 것이 좋다.
+	주석문 내에는 가급적 특수문자는 사용하지 않는 것이 좋다
+ -->
+	<environments default="development">
+		<environment id="development">
+		
+			<transactionManager type="JDBC" />
+		
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+				<property name="username" value="user6"/>
+				<property name="password" value="1234"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!-- mapper.xml을 사용할수 있도록 등록 -->
+	<mappers>
+		<!-- 
+			mapper.xml은 *Dao 인터페이스와 합성되어
+			DBMS에 Query를 전달하고
+			결과값을 List나 VO에 mapping하여 사용할수 있도록하는
+			클래스와 메서드를 대신 생성해준다.
+		 -->
+		<mapper resource="com/biz/mybatis/config/std-mapper.xml"   />
+	</mappers>
+
+</configuration>
