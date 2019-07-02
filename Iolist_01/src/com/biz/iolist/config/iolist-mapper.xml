@@ -5,7 +5,7 @@
 <mapper namespace="com.biz.iolist.dao.IolistDao">
 	
 	<select id="selectAll" resultType="IoVO">
-		SELECT * FROM tbl_iolist
+		SELECT * FROM tbl_iolist ORDER BY io_seq DESC
 	</select>
 	
 	<select id="findById" resultType="IoVO" parameterType="Long">
