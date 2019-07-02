@@ -32,9 +32,7 @@ public class DBConnection {
 		try {
 			Reader configResource = Resources.getResourceAsReader(configFile);
 			if(sqlSessionFactory == null) {
-				sqlSessionFactory 
-				= new SqlSessionFactoryBuilder()
-						.build(configResource);
+				sqlSessionFactory = new SqlSessionFactoryBuilder().build(configResource);
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

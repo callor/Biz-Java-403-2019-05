@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.biz.iolist.dao.IolistDao">
+	
+	<select id="selectAll" resultType="IoVO">
+		SELECT * FROM tbl_iolist
+	</select>
+	
+	<select id="findById" resultType="IoVO" parameterType="Long">
+		SELECT * FROM tbl_iolist WHERE io_seq = #{io_seq}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tbl_iolist (
+				IO_SEQ,
+				IO_DATE,
+				IO_PCODE,
+				IO_CCODE,
+				IO_INOUT,
+				IO_QTY,
+				IO_PRICE,
+				IO_TOTAL
+		) VALUES (
+				SEQ_IOLIST.NEXTVAL,
+				#{io_date},
+				#{io_pcode},
+				#{io_ccode},
+				#{io_inout},
+				#{io_qty},
+				#{io_price},
+				#{io_total}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE tbl_iolist
+		SET
+			IO_DATE = #{io_date},
+			IO_PCODE = #{io_pcode},
+			IO_CCODE = #{io_ccode},
+			IO_INOUT = #{io_inout},
+			IO_QTY = #{io_qty},
+			IO_PRICE = #{io_price},
+			IO_TOTAL = #{io_total}
+		WHERE  IO_SEQ = #{io_seq}		
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM tbl_iolist WHERE io_seq = #{io_seq}
+	</delete>
+
+</mapper>
